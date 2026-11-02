@@ -2,7 +2,7 @@
 
 **A browser-based voice recording and analysis research demo.**
 
-🔗 **Live Demo:** [https://parkinsonvoice.netlify.app/](https://parkinsonvoice.netlify.app/)
+
 
 ## About the Project
 
