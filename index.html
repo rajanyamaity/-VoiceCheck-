@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#079b83" />
+  <title>VoiceCheck — Digital Voice Biomarker Research</title>
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 32 32">
+          <path d="M2 17h6l3-10 5 18 4-12 2 4h8"></path>
+        </svg>
+      </div>
+      <span>VoiceCheck</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#" onclick="showPage('home'); return false;">Home</a>
+      <a href="#" onclick="startVoiceCheck(); return false;">Voice Check</a>
+      <a href="#" onclick="showPage('about'); return false;">About</a>
+      <div class="research-badge">
+        <span class="dot"></span>
+        Research demo
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================
+       HOME PAGE
+       ======================================================== -->
+  <main id="home" class="page active">
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Research &amp; demo screening
+      </div>
+
+      <h1>Your voice can reveal more than you think.</h1>
+
+      <p>
+        Capture a short voice sample using your smartphone and explore
+        AI-powered vocal biomarker analysis for Parkinson's research.
+      </p>
+
+      <div class="hero-wave" aria-label="Animated voice waveform">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+
+      <div class="hero-actions">
+        <button class="primary-btn" onclick="startVoiceCheck()">
+          Start Voice Check <span>→</span>
+        </button>
+        <button class="text-btn" onclick="showPage('about')">
+          Learn how it works
+        </button>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit"><span class="check">✓</span> No account required</div>
+        <div class="benefit"><span class="check">✓</span> Under 1 minute</div>
+        <div class="benefit"><span class="check">✓</span> Works in browser</div>
+      </div>
+    </section>
+
+    <section class="container home-cards">
+      <div class="info-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z"></path>
+            <path d="M8.5 12l2.2 2.2 4.8-5"></path>
+          </svg>
+        </div>
+        <h3>Private by design</h3>
+        <p>
+          No account, password, or phone number.
+          Microphone access starts only with your permission.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+            <path d="M5 10a7 7 0 0 0 14 0"></path>
+            <path d="M12 17v4"></path>
+            <path d="M8 21h8"></path>
+          </svg>
+        </div>
+        <h3>A short, guided sample</h3>
+        <p>
+          One steady "Aah" takes about five seconds and stops automatically.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      VoiceCheck is a research and educational demonstration.
+      It does not diagnose Parkinson's disease or replace professional medical care.
+    </footer>
+  </main>
+
+  <!-- ========================================================
+       ABOUT PAGE
+       ======================================================== -->
+  <main id="about" class="page">
+    <section class="container sub-page">
+      <button class="back-btn" onclick="showPage('home')">← &nbsp;Back home</button>
+
+      <div class="section-label">About VoiceCheck</div>
+      <h1 class="section-title">Why voice matters.</h1>
+      <p class="section-description">
+        Changes in vocal characteristics can be studied as digital
+        biomarkers in Parkinson's disease research. VoiceCheck makes
+        one part of that research workflow easier to access.
+      </p>
+
+      <div class="about-grid">
+        <div class="info-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24">
+              <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+              <path d="M5 10a7 7 0 0 0 14 0"></path>
+              <path d="M12 17v4"></path>
+              <path d="M8 21h8"></path>
+            </svg>
+          </div>
+          <h3>Why voice?</h3>
+          <p>
+            Voice carries measurable information about breath, steadiness, fluency, 
+            and signal quality. Researchers can study these characteristics alongside clinical assessments.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z"></path>
+              <path d="M8.5 12l2.2 2.2 4.8-5"></path>
+            </svg>
+          </div>
+          <h3>Why VoiceCheck?</h3>
+          <p>
+            Specialized clinical assessments can be difficult to access.
+            A browser-based voice collection interface can make
+            standardized research data collection simpler and more accessible.
+          </p>
+        </div>
+      </div>
+
+      <div class="audience">
+        <h2>Who can use it?</h2>
+        <div class="audience-grid">
+          <div class="audience-item"><span>✓</span> Research participants</div>
+          <div class="audience-item"><span>✓</span> Healthcare researchers</div>
+          <div class="audience-item"><span>✓</span> Neurologists</div>
+          <div class="audience-item"><span>✓</span> Rural health workers</div>
+          <div class="audience-item"><span>✓</span> Clinical research teams</div>
+        </div>
+      </div>
+
+      <div class="danger">
+        <h3>⚠ Not a diagnostic device</h3>
+        <p>
+          VoiceCheck is a research and educational demonstration.
+          It does not diagnose Parkinson's disease, assess an individual's
+          health, or replace professional care.
+        </p>
+      </div>
+      <br>
+      <button class="primary-btn" onclick="startVoiceCheck()">Try the voice check →</button>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       VOICE CHECK PAGE
+       ======================================================== -->
+  <main id="voice" class="page">
+    <section class="container check-wrapper">
+      <button class="back-btn" onclick="showPage('home')">← &nbsp;Back</button>
+
+      <div class="check-card">
+        <div class="steps">
+          <div id="stepLine1" class="step-line current"></div>
+          <div id="stepLine2" class="step-line"></div>
+          <div id="stepLine3" class="step-line"></div>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div id="voiceIntro">
+          <div class="section-label">Before we start</div>
+          <h1>A calm, consistent sample</h1>
+          <p>Three small steps help make your sample useful for research.</p>
+
+          <div class="instruction-grid">
+            <div class="instruction">
+              <div class="instruction-number">01</div>
+              <h3>Get ready</h3>
+              <p>Find a quiet place and hold your phone 15–20 cm from your mouth.</p>
+            </div>
+            <div class="instruction">
+              <div class="instruction-number">02</div>
+              <h3>Take a breath</h3>
+              <p>Take a normal breath and get ready to make a steady sound.</p>
+            </div>
+            <div class="instruction">
+              <div class="instruction-number">03</div>
+              <h3>Record</h3>
+              <p>Press the button and say "Aah" steadily for about 5 seconds.</p>
+            </div>
+          </div>
+
+          <div class="privacy-strip">🎙 Your microphone is only used for this session.</div>
+          <button class="primary-btn wide-btn" onclick="requestMicrophone()">Continue to microphone →</button>
+        </div>
+
+        <!-- MICROPHONE -->
+        <div id="micStep" class="mic-page" style="display:none;">
+          <div class="section-label">Step 1 of 3</div>
+          <h1>Microphone access needed</h1>
+          <p>VoiceCheck needs temporary microphone access to capture your voice sample.</p>
+
+          <div class="mic-circle">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+              <path d="M5 10a7 7 0 0 0 14 0"></path>
+              <path d="M12 21v-4"></path>
+              <path d="M8 21h8"></path>
+            </svg>
+          </div>
+
+          <button class="primary-btn wide-btn" onclick="requestMicrophone(true)">🎙 Allow Microphone</button>
+          <div id="micStatus" class="mic-status">You can revoke this permission any time in your browser settings.</div>
+        </div>
+
+        <!-- RECORDING -->
+        <div id="recordStep" class="record-screen" style="display:none;">
+          <div class="section-label">Step 2 of 3</div>
+          <h1>Make a steady "Aah"</h1>
+          <p>Press the button below and hold the sound steadily for five seconds.</p>
+
+          <div class="record-indicator">
+            <span class="dot"></span>
+            <span id="recordState">Ready to record</span>
+          </div>
+
+          <div class="timer" id="timer">0:05</div>
+          <canvas id="recordCanvas"></canvas>
+
+          <button id="recordButton" class="record-button" onclick="toggleRecording()">
+            <span id="recordButtonText">START</span>
+          </button>
+
+          <div class="record-help">
+            Say <strong>"Aah"</strong> naturally and steadily.
+            Recording stops automatically after 5 seconds.
+          </div>
+        </div>
+
+        <!-- PLAYBACK -->
+        <div id="playbackStep" style="display:none;">
+          <div class="recording-success">
+            <div class="success-icon">✓</div>
+            <div class="section-label">Step 3 of 3</div>
+            <h1>Your sample is ready</h1>
+            <p>Listen to your recording before sending it for the demo analysis.</p>
+          </div>
+
+          <div class="audio-box">
+            <audio id="audioPlayback" controls></audio>
+          </div>
+
+          <button class="primary-btn wide-btn" onclick="startAnalysis()">Analyze Voice →</button>
+          <br><br>
+          <button class="text-btn wide-btn" onclick="resetVoiceCheck()">Record again</button>
+        </div>
+
+        <!-- PROCESSING -->
+        <div id="processingStep" class="processing" style="display:none;">
+          <div class="section-label">Voice analysis</div>
+          <h1>Analyzing your sample</h1>
+          <p>Processing your recording through the VoiceCheck research analysis pipeline.</p>
+
+          <div class="processing-visual">
+            <div class="processing-ring"></div>
+            <div class="processing-ring two"></div>
+            <div class="processing-icon">♫</div>
+          </div>
+
+          <div class="analysis-list">
+            <div class="analysis-row">
+              <div id="analysisIcon1" class="analysis-status loading">✓</div>
+              <span>Checking audio quality</span>
+            </div>
+            <div class="analysis-row">
+              <div id="analysisIcon2" class="analysis-status">✓</div>
+              <span>Measuring voice stability</span>
+            </div>
+            <div class="analysis-row">
+              <div id="analysisIcon3" class="analysis-status">✓</div>
+              <span>Evaluating vocal fluency</span>
+            </div>
+            <div class="analysis-row">
+              <div id="analysisIcon4" class="analysis-status">✓</div>
+              <span>Preparing research screening result</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       RESULTS PAGE
+       ======================================================== -->
+  <main id="results" class="page">
+    <section class="container">
+      <div class="results-header">
+        <div class="eyebrow"><span class="dot"></span> Demo screening result</div>
+        <h1>Voice Analysis Complete</h1>
+      </div>
+
+      <div class="result-card">
+        <div class="result-top">
+          <div>
+            <div class="result-label">Voice Screening Signal</div>
+            <div class="risk-title" id="riskTitle">Lower-risk pattern</div>
+          </div>
+          <div class="shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 3l7 3v5c0 4.6-3 8.3-7 10-4-1.7-7-5.4-7-10V6l7-3z"></path>
+              <path d="M8.5 12l2.2 2.2 4.8-5"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="risk-scale">
+          <div class="risk-labels">
+            <span>Low</span>
+            <span>Moderate</span>
+            <span>Higher</span>
+          </div>
+          <div class="risk-bar">
+            <div class="risk-marker" id="riskMarker"></div>
+          </div>
+        </div>
+
+        <div class="score">Risk Score: <strong id="riskScoreVal">18 / 100</strong></div>
+
+        <div class="divider"></div>
+
+        <div class="metrics-title">
+          Voice Metrics
+          <span class="demo-label">Demo values</span>
+        </div>
+
+        <div class="metric">
+          <div class="metric-head">
+            <span>Fluency</span>
+            <strong id="fluencyVal">85 / 100</strong>
+          </div>
+          <div class="metric-bar"><div class="metric-fill" id="fluencyFill" data-width="85%"></div></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-head">
+            <span>Voice Stability</span>
+            <strong id="stabilityVal">78 / 100</strong>
+          </div>
+          <div class="metric-bar"><div class="metric-fill" id="stabilityFill" data-width="78%"></div></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-head">
+            <span>Signal Quality</span>
+            <strong id="qualityVal">91 / 100</strong>
+          </div>
+          <div class="metric-bar"><div class="metric-fill" id="qualityFill" data-width="91%"></div></div>
+        </div>
+
+        <div class="result-note">
+          <strong>Research demonstration only.</strong><br><br>
+          This model is not a diagnostic device and cannot determine whether a person has Parkinson's disease. Results should not be used for medical decisions.
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="primary-btn" onclick="recordAnother()">↻ Record Another Sample</button>
+        <button class="text-btn" onclick="showPage('home')">Return Home</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
